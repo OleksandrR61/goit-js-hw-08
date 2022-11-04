@@ -39,4 +39,4 @@ function clearData(event, storageKey) {
 updateForm(formRef, LOCALSTORAGE_KEY);
 
 formRef.addEventListener('input', (event) => throttle(saveData(event, LOCALSTORAGE_KEY), 500));
-formRef.addEventListener('submit', clearData(LOCALSTORAGE_KEY));
+formRef.addEventListener('submit', (event) => clearData(event, LOCALSTORAGE_KEY));
