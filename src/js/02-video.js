@@ -6,6 +6,10 @@ const LOCALSTORAGE_KEY = "videoplayer-current-time";
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
+if (!localStorage.getItem(LOCALSTORAGE_KEY)) {
+    localStorage.setItem(LOCALSTORAGE_KEY, 0);
+}
+
 function saveCurrentTime({seconds}) {
     localStorage.setItem(LOCALSTORAGE_KEY, seconds);
 }
